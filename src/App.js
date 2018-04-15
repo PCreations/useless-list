@@ -46,7 +46,9 @@ const uselessListAppApolloLinkState = uselessListAppFactory.APOLLO_LINK_STATE({
   fetchUser,
   addMessage
 });
-messageAdded$.subscribe(uselessListAppApolloLinkState.dispatchMessageReceivedAction);
+messageAdded$.subscribe(
+  uselessListAppApolloLinkState.dispatchMessageReceivedAction
+);
 userEdited$.subscribe(uselessListAppApolloLinkState.dispatchUserEditedAction);
 
 const uselessListAppRx = uselessListAppFactory.RX({
@@ -73,12 +75,12 @@ class Inputs extends React.Component {
   handleSubmitUsername = () => {
     const { editUsername } = this.props;
     editUsername(this.usernameInput.value);
-  }
+  };
   render() {
     const { username } = this.props;
     return (
       <div>
-        <div style={{ width: "30%", display: "inline-block" }}>
+        <div style={{ display: "inline-block" }}>
           <input
             type="text"
             defaultValue={username}
